@@ -4,11 +4,15 @@
   <h1 align="center">Developer's Portfolio ✨</h1>
 
   <p align="center">
-    It is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo: 
-    <a href="https://hashirshoaeb.github.io/home">hashirshoaeb.github.io/home</a>
+    It is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo:
+    <a href="https://jiggyjigs.me">jiggyjigs.me</a>
     <br />
     <br />
-    <a href="https://hashirshoaeb.github.io">About Me</a>
+    <a href="https://jiggyjigs.me">About Me</a>
+    ·
+    <a href="https://github.com/jiggyjigsj/home/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/jiggyjigsj/home/issues">Request Feature</a>
   </p>
 </p>
 
@@ -124,11 +128,11 @@ You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/
 
 10. To change the thumbnail image:
 
-    - Navigate to the "public" folder.  
-    - There you will see "social-image.png".  
-    - Delete it.   
-    - Take a screenshot of your version and rename it "social-image.png" and place it there.  
-    
+    - Navigate to the "public" folder.
+    - There you will see "social-image.png".
+    - Delete it.
+    - Take a screenshot of your version and rename it "social-image.png" and place it there.
+
    Next time if you make changes, repeat from step 8.
 
 Facing issues? Feel free to contact at hashirshoaeb@gmail.com.
@@ -197,14 +201,14 @@ Have you changed something in the code to create your own version? Feel free to 
         <sub><b>Xun Ding</b></sub>
       </a>
       <br />
-    </td>    
+    </td>
     <td align="center">
       <a href="https://github.com/S-Philp/Shannel.philp">
         <br />
         <sub><b>Shannel Philp</b></sub>
       </a>
       <br />
-    </td>    
+    </td>
     <td align="center">
       <a href="https://github.com/bibinvargheset/home">
         <br />
