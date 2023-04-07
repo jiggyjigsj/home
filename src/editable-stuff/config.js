@@ -54,10 +54,11 @@ const about = {
   imageLink: require("../editable-stuff/jigar.jpg"),
   imageSize: 375,
   message:
-    "Jigar Patel is a Senior systems engineer at Cerner Corporation, an American supplier of health information technology services, devices, and hardware. With over 5 years of cloud experience, he finds that honesty, creativity, and dedication to be the most valuable qualities for successfully being a consequential member of a team.",
+    "Jigar Patel has extensive experience in Agile methodology and best practices, resulting in successful project management with high team velocity and on-time delivery. They closely monitor progress, risks, and blockers to prioritize high sprint completion rates and allocate resources effectively. In addition, he mentors teams, and facilitates knowledge sharing while ensuring customer satisfaction through transparent communication.",
   message2:
-    "Jigar holds a Bachelor’s in Information Technology and Management from the Illinois Institute of Technology. During his free time, he loves new technologies and exploring new skills. Jigar hopes to continue using his determination and quick-thinking to pursue new opportunities in the DevOps world.",
-  resume: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
+    "His expertise includes developing and maintaining Kubernetes infrastructure in a multi-cloud environment utilizing GCP (GKE, CloudArmor, VPCs, Subnets) and AWS (EC2, S3, R53, IAM, Cognito), automating IAM and Access Management using Terraform and AWS Terraform Provider, troubleshooting complex networking, software, and configuration issues, and providing support for production incidents. He also evaluates emerging technologies and design improved architectures utilizing OpenStack, Docker, and Terraform for enhanced client solutions.",
+  message3: "Throughout his career, he has overseen weekly patching of over 200 Kubernetes clusters spanning Department of Defense, Veterans Affairs, and on-premises environments, streamlined patching operations and processes to minimize downtime, and ensured high availability of clusters. They have also executed migrations, upgrades, installations, and configurations from development to production environments.",
+    resume: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
 };
 
 // PROJECTS SECTION
@@ -136,9 +137,9 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: 'Senior System Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/cerner.png'),
-      date: 'May 2017 – Present',
+      role: 'Lead Platform Engineer',// Here Add Company Name
+      companylogo: require('../assets/img/pager.jpg'),
+      date: 'May 2022 – Present',
     }
   ]
 }
