@@ -22,4 +22,3 @@ spec:
             name: home
             port:
               number: 3000
-            path: /home
