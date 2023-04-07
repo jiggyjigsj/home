@@ -9,8 +9,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
-  addPrefix:
-    prefix: /home
   rules:
   - host: jiggyjigs.me
     http:
@@ -22,3 +20,18 @@ spec:
             name: home
             port:
               number: 3000
+        pathRewrite:
+          prependPath: /home
+        middlewares:
+        - name: add-prefix
+          namespace: default
+  ---
+  apiVersion: traefik.containo.us/v1alpha1
+  kind: Middleware
+  metadata:
+    name: add-prefix
+    namespace: default
+  spec:
+    replacePathRegex:
+      regex: /
+      replacement: /home/
