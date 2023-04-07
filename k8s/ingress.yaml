@@ -16,8 +16,8 @@ spec:
       - path: /
         pathType: Prefix
         backend:
+          path: /home
           service:
             name: home
             port:
               number: 3000
-              path: /home
