@@ -9,6 +9,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
+  addPrefix:
+    prefix: /home
   rules:
   - host: jiggyjigs.me
     http:
