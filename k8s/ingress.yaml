@@ -13,10 +13,11 @@ spec:
   - host: jiggyjigs.me
     http:
       paths:
-      - path: /home
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: home
             port:
-              number: 3000
+              number: http
+            path: /home
