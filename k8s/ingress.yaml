@@ -19,5 +19,5 @@ spec:
           service:
             name: home
             port:
-              number: http
+              number: 3000
             path: /home
