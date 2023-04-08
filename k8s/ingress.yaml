@@ -8,7 +8,7 @@ metadata:
     app: home
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.middlewares: apps-home-prefix@kubernetescrd
+#     traefik.ingress.kubernetes.io/router.middlewares: apps-home-prefix@kubernetescrd
 spec:
   rules:
   - host: jiggyjigs.me
