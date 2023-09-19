@@ -7,7 +7,7 @@ const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
 );
 
-const AboutMe = ({ heading, message, message2, message3, link, imgSize, resume }) => {
+const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   const [profilePicUrl, setProfilePicUrl] = React.useState("");
   const [showPic, setShowPic] = React.useState(Boolean(link));
   // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
@@ -31,8 +31,6 @@ const AboutMe = ({ heading, message, message2, message3, link, imgSize, resume }
     }
   }, [link]);
 
-
-
   return (
     <Jumbotron id="aboutme" className="m-0">
       <div className="container row">
@@ -49,9 +47,14 @@ const AboutMe = ({ heading, message, message2, message3, link, imgSize, resume }
         </div>
         <div className={`col-lg-${showPic ? "7" : "12"}`}>
           <h2 className="display-4 mb-5 text-center">{heading}</h2>
-          <p className="lead text-center">{message}</p>
+          {
+            message.map((msg, index) => (
+              <p key={index} className="lead text-center" dangerouslySetInnerHTML={{ __html: msg }} />
+            ))
+          }
+          {/* <p className="lead text-center">{message}</p>
           <p className="lead text-center">{message2}</p>
-          <p className="lead text-center">{message3}</p>
+          <p className="lead text-center">{message3}</p> */}
           {resume && (
             <p className="lead text-center">
               <a

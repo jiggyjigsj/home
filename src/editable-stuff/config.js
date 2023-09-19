@@ -16,10 +16,6 @@ const mainBody = {
       url: "https://github.com/jiggyjigsj",
     },
     {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/jiggyjigsj",
-    },
-    {
       image: "fa-instagram",
       url: "https://www.instagram.com/jiggyjigsj/",
     },
@@ -53,11 +49,14 @@ const about = {
   heading: "About Me",
   imageLink: require("../editable-stuff/jigar.jpg"),
   imageSize: 375,
-  message:
-    "Jigar Patel has extensive experience in Agile methodology and best practices, resulting in successful project management with high team velocity and on-time delivery. They closely monitor progress, risks, and blockers to prioritize high sprint completion rates and allocate resources effectively. In addition, he mentors teams, and facilitates knowledge sharing while ensuring customer satisfaction through transparent communication.",
-  message2:
-    "His expertise includes developing and maintaining Kubernetes infrastructure in a multi-cloud environment utilizing GCP (GKE, CloudArmor, VPCs, Subnets) and AWS (EC2, S3, R53, IAM, Cognito), automating IAM and Access Management using Terraform and AWS Terraform Provider, troubleshooting complex networking, software, and configuration issues, and providing support for production incidents. He also evaluates emerging technologies and design improved architectures utilizing OpenStack, Docker, and Terraform for enhanced client solutions.",
-  message3: "Throughout his career, he has overseen weekly patching of over 200 Kubernetes clusters spanning Department of Defense, Veterans Affairs, and on-premises environments, streamlined patching operations and processes to minimize downtime, and ensured high availability of clusters. They have also executed migrations, upgrades, installations, and configurations from development to production environments.",
+  message: [
+    "<i>Beep boop!</i> 🤖 Hello, digital wanderer! It's <em>Jiggy</em>, the bot, tuning in. I've crunched the numbers, parsed the data, and I'm here to introduce you to the legendary engineer: <em>Jigar</em>. If Kubernetes clusters were a video game, his high score would have the universe buzzing 🎮🌌!",
+    "<i>Boop beep!</i> 📢 In the vast digital cosmos, <em>Jigar</em> is a beacon of <b>DevOps</b> ideology 🛠️💡, masterfully blending development and operations into a sweet tech symphony 🎶. As the <b>Lead Platform Engineer</b>, he’s the master builder of cloud kingdoms on the <b>Google Cloud Platform (GCP)</b> 🌩️🏰. Every pixelated sunrise, he gears up 🥾, his tools in hand 🛠️, ready to fortify and optimize the digital frontier 🎉.",
+    "Ever wonder what’s in a techie's pixel pouch? 🧰🌟 <em>Jigar</em> is a cornucopia of wonders from the realms of GCP and the mazes of <b>AWS</b>. With <b>Terraform</b> trusty map 🗺️, he adventures through <b>networking</b> jungles and configuration caves, always emerging victorious 🏆. Riding the digital waves, he surfs with <b>OpenStack</b>, <b>Docker</b>, and more, crafting pixel-perfect solutions for clients 🏄‍♂️💼.",
+    "<i>Boopity beep!</i> 🎵 In the chronicles of tech, <em>Jigar's</em> been the orchestrator 🎼, harmonizing a chorus of over <b>200 Kubernetes clusters</b>, from the cyber citadels of the Department of Defense to the digital domains of Veterans Affairs. Smooth uploads, encore-worthy uptimes, and glitch-free deployments? That's <em>Jigar's</em> signature tune 🎶. But it's not all solo play; he's all about the co-op mode – <b>mentoring</b>, <b>collaborating</b>, and ensuring everyone's on the same server 🕺.",
+    "How about we set sail on a <b>Kubernetes</b> kruise? 🚢⚓ Ping <em>Jigar</em>, and together, you might just navigate the most exciting tech adventures yet! 🌊🏴‍☠️ <i>Bee boop!</i>",
+    "Now, Jiggy is inviting potential connections to join <em>Jigar</em> on a playful <b>\"</b>Kubernetes kruise<b>\"</b>! 🤖🎉",
+  ],
     resume: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
 };
 
