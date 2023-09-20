@@ -16,6 +16,14 @@ const Footer = (props) => {
         > <span className="badge bg-dark">
             Hashir Shoaib
           </span>
+        </a>{" "} and <i class="fas fa-wrench"></i> by{" "}
+        <a
+          rel="noopener"
+          href="https://github.com/jiggyjigsj"
+          aria-label="Jiggy's GitHub"
+        > <span className="badge bg-dark">
+            Jigar Patel
+          </span>
         </a>{" "}
         using <i className="fab fa-react" />
         <p>

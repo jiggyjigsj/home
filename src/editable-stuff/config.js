@@ -9,24 +9,24 @@ const mainBody = {
   firstName: "Jigar",
   middleName: "",
   lastName: "Patel",
-  message: " Passionate about changing the world with technology. ",
+  message: "Passionate about changing the world with technology.",
   icons: [
     {
-      image: "fa-github",
+      image: "fab fa-github",
       url: "https://github.com/jiggyjigsj",
     },
     {
-      image: "fa-instagram",
+      image: "fab fa-instagram",
       url: "https://www.instagram.com/jiggyjigsj/",
     },
     {
-      image: "fa-linkedin",
+      image: "fab fa-linkedin",
       url: "https://www.linkedin.com/in/jiggyjigsj/",
     },
     {
-      image: "fa-file",
+      image: "far fa-file-alt",
       url: "https://nextcloud.jiggyjigs.me/s/s7TSqZdGPz282Gm",
-    },
+    }
   ],
 };
 
@@ -67,10 +67,10 @@ const about = {
 //      i.e ["repository-1", "repo-2"]
 const repos = {
   show: true,
-  heading: "Recent Projects",
+  heading: "Recent Github Interactions",
   gitHubUsername: "jiggyjigsj", //i.e."johnDoe12Gh"
   reposLength: 2,
-  specificRepos: [],
+  specificRepos: ["front-to-back", "photo-webapp" ],
 };
 
 // Leadership SECTION
@@ -102,13 +102,13 @@ const skills = {
   show: true,
   heading: "Skills",
   hardSkills: [
-    { name: "CloudFormation", value: 65 },
-    { name: "Ansible", value: 65 },
-    { name: "Ruby", value: 70 },
-    { name: "Python", value: 60 },
     { name: "Terraform", value: 95 },
+    { name: "Ansible and Chef", value: 65 },
+    { name: "Ruby", value: 70 },
+    { name: "CloudFormation", value: 65 },
+    { name: "Python", value: 75 },
     { name: "Bash", value: 95 },
-    { name: "Networking", value: 90 },
+    { name: "GCP/AWS", value: 80 },
     { name: "Fullstack operations", value: 95 },
   ],
   softSkills: [
@@ -127,7 +127,7 @@ const getInTouch = {
   show: true,
   heading: "Get In Touch",
   message:
-    "I'm currently looking for full-time Senior DevOps opportunities! If you have any positions available,  questions, or just want to say hi, please feel free to email me at",
+    "I am on a quest for some DevOps, Site Reliability Engineering, and Platform Engineering treasure maps 🗺️✨! If you've got the X that marks the spot for a Senior or Lead role, have some tech tales, or just fancy a digital \"Ahoy!\" 🏴‍☠️, drop me an anchor via email at...",
   email: "jobs@jiggyjigs.me",
 };
 
