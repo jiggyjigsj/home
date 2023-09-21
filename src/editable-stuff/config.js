@@ -25,7 +25,7 @@ const mainBody = {
     },
     {
       image: "far fa-file-alt",
-      url: "https://nextcloud.jiggyjigs.me/s/s7TSqZdGPz282Gm",
+      url: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
     }
   ],
 };
