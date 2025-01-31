@@ -25,7 +25,7 @@ const mainBody = {
     },
     {
       image: "far fa-file-alt",
-      url: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
+      url: "https://nextcloud.jiggyjigs.me/s/resume",
     }
   ],
 };
@@ -57,7 +57,7 @@ const about = {
     "How about we set sail on a <b>Kubernetes</b> kruise? 🚢⚓ Ping <em>Jigar</em>, and together, you might just navigate the most exciting tech adventures yet! 🌊🏴‍☠️ <i>Bee boop!</i>",
     "Now, Jiggy is inviting potential connections to join <em>Jigar</em> on a playful <b>\"</b>Kubernetes kruise<b>\"</b>! 🤖🎉",
   ],
-    resume: "https://nextcloud.jiggyjigs.me/s/jigar-resume",
+    resume: "https://nextcloud.jiggyjigs.me/s/resume",
 };
 
 // PROJECTS SECTION
