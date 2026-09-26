@@ -64,6 +64,7 @@ jobs:
       - run: npm ci --no-fund
 
       - name: Render résumé PDF
+        timeout-minutes: 5
         run: npm run resume:pdf
         env:
           CHROME_PATH: /usr/bin/google-chrome
