@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { askAI, hireMailto, nav, profile, socials } from "../content";
 import { navigate } from "../router";
 import { toggleTheme } from "../theme";
+import { shuffleBackground } from "./Background";
 import Icon from "./Icon";
 
 function buildActions(close, toast) {
@@ -40,6 +41,16 @@ function buildActions(close, toast) {
       run: () => {
         toggleTheme();
         close();
+      },
+    },
+    {
+      group: "Actions",
+      label: "Shuffle background colors",
+      hint: "or click the background",
+      icon: "spark",
+      run: () => {
+        close();
+        shuffleBackground();
       },
     },
     {

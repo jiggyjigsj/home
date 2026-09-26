@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ai, askAI, features, hireMailto, profile, socials, toolkit } from "../content";
 import { navigate } from "../router";
+import { shuffleBackground } from "./Background";
 import { toggleTheme } from "../theme";
 
 const PROMPT = "jiggy@home ~ %";
@@ -27,6 +28,7 @@ const commands = {
       ["ask", "ask an AI about me"],
       ["hire", "draft an email to me"],
       ["theme", "flip light / dark"],
+      ["colors", "shuffle the smoke"],
       ["goto", "about, work, ai, projects, contact, resume"],
       ["clear", "wipe the screen"],
     ].map(([c, d]) => ({ kind: "row", k: c, v: d })),
@@ -65,6 +67,10 @@ const commands = {
     { kind: "ok", text: "Drafting an email with the details I'll need…" },
     { kind: "_effect", run: () => (window.location.href = hireMailto) },
   ],
+  colors: () => {
+    shuffleBackground();
+    return [{ kind: "ok", text: "New colors. Click the background anytime to shuffle again." }];
+  },
   theme: () => {
     toggleTheme();
     return [{ kind: "ok", text: "Theme switched." }];
