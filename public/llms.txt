@@ -1,0 +1,31 @@
+# Jigar Patel
+
+> Lead Platform Engineer in Austin, TX. Runs the Kubernetes platform behind Cooklist's agentic AI for grocery and ships it with a team of AI coding agents. 9+ years in platform engineering, SRE, and DevOps. Open to Senior, Staff, and Lead roles in platform engineering, SRE, and AI infrastructure.
+
+Contact: jobs@jiggyjigs.me
+Site: https://jiggyjigs.me
+Résumé: https://jiggyjigs.me/resume (PDF: https://jiggyjigs.me/resume.pdf)
+GitHub: https://github.com/jiggyjigsj
+LinkedIn: https://www.linkedin.com/in/jiggyjigsj/
+
+## Experience
+
+- Cooklist, Lead Platform Engineer (Dec 2025 – present): Owns the GKE platform (production, staging, DR) behind agentic search and AI chat used by enterprise grocery retailers. Built per-PR ephemeral environments, a trunk-based release pipeline with migration gates, an LLM-reviewed database migration check, queue-aware autoscaling (KEDA, HPA on custom Prometheus metrics), a zero-downtime edge cutover to Traefik Gateway behind Cloud Armor, self-hosted CI runners on GKE spot nodes, and enterprise SSO with group-synced permissions.
+- Pager, Lead Platform Engineer (May 2022 – Nov 2025): Led a team of five. Migrated 60 services to modern continuous deployment (90% shorter lead time, 1,800 hours / $216K saved per year). Spinnaker to Harness with canary and blue/green. On-prem to GCP migration. PostgreSQL to CloudSQL (p95 −50%, $80K saved). $113K/year cloud cost savings. HIPAA and SOC 2 compliance.
+- Cerner, Senior SRE / Senior System Engineer / System Engineer (2017 – 2022): Weekly patching for 200+ Kubernetes clusters across Department of Defense, Veterans Affairs, and on-prem. Kubernetes on vSphere, OpenStack, EC2, and EKS via infrastructure as code. 1,000+ Linux servers with Chef.
+- Zebra Technologies, Senior DevOps Engineer (2021): Dynatrace observability across Kubernetes and microservices.
+
+## How he works with AI
+
+- Runs coding agents (Claude Code, Codex) in parallel git worktrees, one ticket per agent, with sub-agents for research, tests, and review.
+- Roughly doubled merged PRs per month after moving to parallel agents; about 63% of his merged PRs in 2026 are AI co-authored.
+- Authored 15 reusable agent skills shared across tools: incident triage, postmortem drafting, read-only database access, CI fixing, PR review handling, and session handoff.
+- Guardrails: diagnose read-only first, staging before production, and nothing merges without human approval.
+
+## Skills
+
+Kubernetes (GKE, EKS), Terraform, Helm, KEDA, GCP (Cloud Run, AlloyDB, Pub/Sub, Cloud Armor, IAP), AWS, GitHub Actions, ARC, Harness, Prometheus, Datadog, Sentry, Python, Bash, AI agent tooling (Claude Code, Codex, MCP).
+
+## Education
+
+Illinois Institute of Technology, B.S. Information Technology & Management.

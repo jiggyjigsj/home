@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jigar Patel · Platform engineering at agent speed</title>
+    <meta
+      name="description"
+      content="Jigar Patel is a Lead Platform Engineer who runs the Kubernetes platform behind an AI grocery product and ships it with a team of coding agents."
+    />
+    <meta name="theme-color" content="#050607" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Jigar Patel · Platform engineering at agent speed" />
+    <meta property="og:description" content="Platforms that stay boring, shipped at agent speed." />
+    <meta property="og:image" content="/social-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
