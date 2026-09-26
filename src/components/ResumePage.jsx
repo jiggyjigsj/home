@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { hireMailto } from "../content";
 import { CountUp, Scramble, useReveal } from "../effects";
+import face from "../assets/jiggy-face.png";
 import { resume } from "../resume";
 import { Link } from "../router";
 import Icon from "./Icon";
@@ -9,8 +10,9 @@ const PREVIEW = 3;
 
 function Role({ role, i }) {
   const [open, setOpen] = useState(i === 0);
-  const extra = role.bullets.length - PREVIEW;
-  const bullets = open ? role.bullets : role.bullets.slice(0, PREVIEW);
+  const all = [...role.bullets, ...(role.extra || [])];
+  const extra = all.length - PREVIEW;
+  const bullets = open ? all : all.slice(0, PREVIEW);
   return (
     <li className="tl-item reveal" style={{ "--d": "60ms" }}>
       <span className="tl-node" aria-hidden="true" />
@@ -79,9 +81,14 @@ export default function ResumePage() {
         <Link href="/" className="text-link back">
           <Icon name="arrow" size={16} style={{ transform: "rotate(180deg)" }} /> Home
         </Link>
-        <h1 className="resume-name">
-          <span className="grad">{resume.name}</span>
-        </h1>
+        <div className="resume-id">
+          <span className="avatar" aria-hidden="true">
+            <img src={face} alt="" width="480" height="480" />
+          </span>
+          <h1 className="resume-name">
+            <span className="grad">{resume.name}</span>
+          </h1>
+        </div>
         <p className="resume-role">
           {resume.title} · {resume.location}
         </p>
@@ -126,11 +133,13 @@ export default function ResumePage() {
           </div>
           <div className="reveal" style={{ "--d": "100ms" }}>
             <Scramble as="h2" className="section-title small" text="Education" />
-            <div className="edu glass">
-              <h3>{resume.education.school}</h3>
-              <p>{resume.education.degree}</p>
-              <p className="muted">{resume.education.years}</p>
-            </div>
+            {resume.education.map((e) => (
+              <div className="edu glass" key={e.school}>
+                <h3>{e.school}</h3>
+                <p>{e.degree}</p>
+                <p className="muted">{e.years}</p>
+              </div>
+            ))}
             <a className="btn btn-ghost btn-lg edu-cta" href={hireMailto}>
               <Icon name="mail" size={18} /> Talk to me
             </a>

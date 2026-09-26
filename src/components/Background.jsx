@@ -43,18 +43,18 @@ void main() {
   vec3 col = mix(teal, lime, smoothstep(0.25, 0.85, r.x * 0.8 + phase * 0.4));
   col = mix(col, violet, smoothstep(0.45, 0.95, q.y + 0.15 * sin(uScroll)) * 0.75);
 
-  float glow = smoothstep(0.36, 0.98, f + near * 0.16);
-  glow = glow * glow * 1.25;
+  float glow = smoothstep(0.32, 0.95, f + near * 0.18);
+  glow = glow * glow * 0.95;
+  // soft wisps so the smoke has body between the bright plumes
+  float wisp = smoothstep(0.25, 0.75, f) * 0.06;
 
-  // faint perspective grid, brightest near the pointer
-  vec2 g = abs(fract(gl_FragCoord.xy / 56.0) - 0.5);
-  float grid = (1.0 - smoothstep(0.0, 0.025, min(g.x, g.y))) * (0.03 + near * 0.08);
+  // Dark mode strength is tuned on its own; light mode uses glow/wisp below unchanged.
+  vec3 dark = vec3(0.012, 0.016, 0.02) + col * (glow * 0.49 + wisp * 0.6); // ~50% peak
+  dark *= 1.0 - 0.3 * length(uv - 0.5);
 
-  vec3 dark = vec3(0.012, 0.016, 0.02) + col * (glow * 0.85 + grid);
-  dark *= 1.0 - 0.35 * length(uv - 0.5);
-
-  vec3 paper = vec3(0.965, 0.972, 0.96);
-  vec3 light = mix(paper, col * 0.85 + 0.12, glow * 0.55) - grid * 0.4;
+  vec3 paper = vec3(0.972, 0.98, 0.968);
+  vec3 tint = mix(col, vec3(1.0), 0.35);
+  vec3 light = mix(paper, tint, clamp(glow * 0.36 + wisp * 0.7, 0.0, 0.42));
 
   gl_FragColor = vec4(mix(dark, light, uLight), 1.0);
 }
@@ -158,6 +158,7 @@ export default function Background() {
   return (
     <>
       <canvas ref={ref} className="bg-canvas" aria-hidden="true" />
+      <div className="bg-dots" aria-hidden="true" />
       <div className="bg-grain" aria-hidden="true" />
     </>
   );

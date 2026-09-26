@@ -141,7 +141,7 @@ export default function Navbar({ onOpenPalette }) {
         role="dialog"
         aria-modal="true"
         aria-label="Menu"
-        inert={open ? undefined : ""}
+        inert={!open}
       >
         <div className="drawer-head">
           <Logo />

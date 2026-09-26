@@ -31,7 +31,7 @@ export default function ResumePrint() {
       </ul>
 
       <h2>Experience</h2>
-      {resume.roles.map((r) => (
+      {resume.roles.filter((r) => !r.web).map((r) => (
         <section key={`${r.company}-${r.start}`} className="rp-role">
           <div className="rp-role-head">
             <h3>
@@ -63,13 +63,13 @@ export default function ResumePrint() {
         </section>
         <section>
           <h2>Education</h2>
-          <p className="rp-edu">
-            <b>{resume.education.school}</b>
-            <br />
-            {resume.education.degree}
-            <br />
-            <span>{resume.education.years}</span>
-          </p>
+          {resume.education.map((e) => (
+            <p className="rp-edu" key={e.school}>
+              <b>{e.school}</b>
+              <br />
+              {e.degree} <span>· {e.years}</span>
+            </p>
+          ))}
         </section>
       </div>
     </div>

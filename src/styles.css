@@ -26,7 +26,14 @@
   --accent-text: var(--lime);
   --teal-text: var(--teal);
   --ink: #050607;
+  --term-bg: rgba(5, 6, 7, 0.72);
   --dot-bg: #14191b;
+  --dot: rgba(220, 255, 240, 0.14);
+  --bar-solo: #3b4745;
+  --tag-lime: var(--lime);
+  --tag-teal: var(--teal);
+  --tag-violet: var(--violet);
+  --tag-pink: var(--pink);
   --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
   color-scheme: dark;
 }
@@ -44,6 +51,16 @@
     --accent-text: #3f6b00;
     --teal-text: #007a66;
     --dot-bg: #ffffff;
+    --dot: rgba(7, 30, 20, 0.2);
+    --bar-solo: #b8c3bf;
+    --term-bg: #0c1110;
+    --tag-lime: #3f6b00;
+    --tag-teal: #00705e;
+    --tag-violet: #6d3fd6;
+    --tag-pink: #b8238f;
+    --glass: rgba(255, 255, 255, 0.72);
+    --glass-2: rgba(255, 255, 255, 0.92);
+    --shadow: 0 24px 60px -28px rgba(10, 40, 30, 0.22), 0 2px 8px -4px rgba(10, 40, 30, 0.08);
     --shadow: 0 30px 60px -30px rgba(10, 30, 20, 0.25);
     --grad: linear-gradient(100deg, #5a8f00 0%, #00a88a 45%, #0284c7 70%, #7c3aed 100%);
     color-scheme: light;
@@ -62,6 +79,16 @@
   --accent-text: #3f6b00;
   --teal-text: #007a66;
   --dot-bg: #ffffff;
+  --dot: rgba(7, 30, 20, 0.2);
+  --bar-solo: #b8c3bf;
+  --term-bg: #0c1110;
+  --tag-lime: #3f6b00;
+  --tag-teal: #00705e;
+  --tag-violet: #6d3fd6;
+  --tag-pink: #b8238f;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-2: rgba(255, 255, 255, 0.92);
+  --shadow: 0 24px 60px -28px rgba(10, 40, 30, 0.22), 0 2px 8px -4px rgba(10, 40, 30, 0.08);
   --shadow: 0 30px 60px -30px rgba(10, 30, 20, 0.25);
   --grad: linear-gradient(100deg, #5a8f00 0%, #00a88a 45%, #0284c7 70%, #7c3aed 100%);
   color-scheme: light;
@@ -255,6 +282,18 @@ kbd {
   background: radial-gradient(60% 50% at 80% 10%, rgba(198, 244, 50, 0.18), transparent 70%),
     radial-gradient(50% 50% at 10% 60%, rgba(25, 230, 193, 0.16), transparent 70%),
     radial-gradient(40% 40% at 60% 90%, rgba(167, 139, 250, 0.16), transparent 70%), var(--bg);
+}
+
+/* A quiet dot grid gives the page structure so the smoke stays in the background. */
+.bg-dots {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(var(--dot) 1.1px, transparent 1.6px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 85%);
 }
 
 .bg-grain {
@@ -881,7 +920,7 @@ kbd {
   flex-direction: column;
   border-radius: 22px;
   border: 1px solid var(--glass-line-2);
-  background: rgba(5, 6, 7, 0.72);
+  background: var(--term-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow), 0 0 90px -30px rgba(25, 230, 193, 0.45);
@@ -1259,15 +1298,110 @@ kbd {
   opacity: 0.45;
 }
 
-.photo-ring img {
-  aspect-ratio: 4 / 5;
+.photo-flip {
+  display: block;
   width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  perspective: 1200px;
+}
+
+.photo-ring {
+  display: block;
+}
+
+.photo-faces {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  transform-style: preserve-3d;
+  transition: transform 0.9s var(--spring);
+}
+
+.photo-flip.is-flipped .photo-faces {
+  transform: rotateY(180deg);
+}
+
+.photo-faces > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 29px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.face-photo {
   object-fit: cover;
   object-position: 50% 22%;
-  border-radius: 29px;
+}
+
+/* White background multiplies into the gradient, so the ink drawing works in both themes. */
+.face-cartoon,
+.avatar {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--lime), var(--teal) 60%, var(--cyan));
+  overflow: hidden;
+}
+
+.face-cartoon {
+  transform: rotateY(180deg);
+}
+
+.face-cartoon img,
+.avatar img {
+  width: 92%;
+  height: auto;
+  max-height: 92%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.photo-flip:hover .photo-faces {
+  transform: rotateY(12deg);
+}
+
+.photo-flip.is-flipped:hover .photo-faces {
+  transform: rotateY(168deg);
+}
+
+.photo-hint {
+  margin-left: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.resume-id {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  margin-top: 16px;
+}
+
+.resume-id .resume-name {
+  margin-top: 0;
+}
+
+.avatar {
+  flex: none;
+  width: clamp(64px, 9vw, 110px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 40px -8px rgba(25, 230, 193, 0.6);
+  transition: transform 0.6s var(--spring);
+}
+
+.avatar:hover {
+  transform: rotate(-10deg) scale(1.06);
 }
 
 .photo-tag {
+  pointer-events: none;
   position: absolute;
   left: 18px;
   bottom: 18px;
@@ -1417,7 +1551,7 @@ kbd {
 }
 
 .fcard {
-  --c: var(--lime);
+  --c: var(--tag-lime);
   position: relative;
   display: block;
   width: min(340px, 78vw);
@@ -1433,13 +1567,13 @@ kbd {
 }
 
 .fcard.tag-ai {
-  --c: var(--violet);
+  --c: var(--tag-violet);
 }
 .fcard.tag-delivery {
-  --c: var(--teal);
+  --c: var(--tag-teal);
 }
 .fcard.tag-security {
-  --c: var(--pink);
+  --c: var(--tag-pink);
 }
 
 .fcard-inner {
@@ -1775,7 +1909,7 @@ kbd {
 }
 
 .sw-before {
-  background: var(--glass-line-2);
+  background: var(--bar-solo);
 }
 
 .sw-after {
@@ -1808,7 +1942,7 @@ kbd {
   width: min(70%, 30px);
   height: var(--h);
   border-radius: 6px 6px 2px 2px;
-  background: var(--glass-line-2);
+  background: var(--bar-solo);
   transform-origin: bottom;
   transform: scaleY(0);
   transition: transform 1s var(--spring), opacity 0.2s, box-shadow 0.3s;
@@ -2730,5 +2864,47 @@ body:has(.rp) {
 
   .marquee-rev {
     display: none;
+  }
+}
+
+/* ============ Light mode polish ============ */
+:root[data-theme="light"] .btn-primary {
+  box-shadow: 0 10px 30px -12px rgba(60, 140, 0, 0.45);
+}
+
+:root[data-theme="light"] .fcard-back {
+  background: color-mix(in srgb, var(--c) 8%, #fff);
+}
+
+:root[data-theme="light"] .ai-stats dd,
+:root[data-theme="light"] .impact-item dd {
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .photo-tag {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+}
+
+:root[data-theme="light"] .pipe-panel pre {
+  background: #0c1110;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .btn-primary {
+    box-shadow: 0 10px 30px -12px rgba(60, 140, 0, 0.45);
+  }
+
+  :root:not([data-theme="dark"]) .fcard-back {
+    background: color-mix(in srgb, var(--c) 8%, #fff);
+  }
+
+  :root:not([data-theme="dark"]) .ai-stats dd {
+    text-shadow: none;
+  }
+
+  :root:not([data-theme="dark"]) .photo-tag {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text);
   }
 }

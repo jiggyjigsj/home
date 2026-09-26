@@ -133,7 +133,7 @@ export default function CommandPalette({ open, setOpen }) {
         role="dialog"
         aria-modal="true"
         aria-label="Command menu"
-        inert={open ? undefined : ""}
+        inert={!open}
       >
         <div className="palette-search">
           <Icon name="search" size={18} />

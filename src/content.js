@@ -1,13 +1,15 @@
+import { yearsWord } from "./experience";
+
 // All the editable copy for the site lives here. Résumé data lives in resume.js.
 
 export const profile = {
   name: "Jigar Patel",
   nickname: "Jiggy",
-  role: "Lead Platform Engineer",
+  role: "Head of Platform Engineering",
   company: "Cooklist",
   email: "jobs@jiggyjigs.me",
-  availability: "Open to Senior, Staff & Lead roles",
-  tagline: "I run the Kubernetes platform behind an AI grocery product, and ship it with a team of agents.",
+  availability: "Open to Senior, Staff, Principal & Lead roles",
+  tagline: "I lead platform engineering behind an agentic AI grocery product, and ship it with a team of agents.",
 };
 
 const hireBody = `Hi Jigar,
@@ -63,7 +65,7 @@ export const impact = [
 
 export const about = {
   lead: "I make the platform the least interesting part of your day.",
-  body: "Nine years of keeping infrastructure boring: 1,000-server fleets, 200+ Kubernetes clusters for DoD and VA, a platform team at Pager, and now the GKE platform behind Cooklist's agentic AI for grocery.",
+  body: `${yearsWord} years of keeping infrastructure boring: 1,000-server fleets, 200+ Kubernetes clusters for DoD and VA, a platform team at Pager, and now leading platform engineering for Cooklist's agentic AI for grocery.`,
   timeline: [
     { company: "Cerner", years: "2017" },
     { company: "Zebra", years: "2021" },
@@ -74,6 +76,20 @@ export const about = {
 
 // Things I've shipped. tag drives the filter chips.
 export const features = [
+  {
+    tag: "AI",
+    title: "Chef, our agent teammate",
+    summary: "A hosted agent in Slack with four roles that picks up real engineering work.",
+    detail: "Company intake and incident triage, an engineering worker that opens PRs, an Elder reviewer, and a knowledge role. Routed through a Kanban board with read-only defaults and human merge.",
+    stack: ["Hermes", "Slack", "MCP", "GitHub"],
+  },
+  {
+    tag: "AI",
+    title: "Docs that update themselves",
+    summary: "A knowledge skill turns Slack drive-bys and merged PRs into docs PRs.",
+    detail: "Every week it reviews Slack threads, merged pull requests, and Linear, validates each decision against code, and updates the page that owns it with a decision marker.",
+    stack: ["Hermes", "Slack", "GitHub", "MkDocs"],
+  },
   {
     tag: "AI",
     title: "LLM-reviewed migrations",
@@ -186,9 +202,10 @@ export const ai = {
     { title: "Incident copilot", text: "Read-only triage across k8s, Datadog, Sentry, and deploys." },
     { title: "Migration judge", text: "Facts plus an LLM verdict on how to ship each migration." },
     { title: "Postmortem drafter", text: "Slack threads and alerts into a finished postmortem." },
-    { title: "Hermes", text: "Ops agent for alert triage and weekly docs curation." },
+    { title: "Chef", text: "Slack agent with intake, engineering, review, and knowledge roles." },
+    { title: "Knowledge curator", text: "Slack threads and merged PRs into docs updates with decision markers." },
     { title: "Chat harness", text: "Proves AI chat streams end to end after every release." },
-    { title: "Park & pickup", text: "Hand work between sessions and agents without losing context." },
+
   ],
   terminal: [
     "2× merged PRs a month since agents went parallel",
@@ -236,5 +253,5 @@ export const projects = [
 
 export const contact = {
   heading: "Let's build something that never pages you.",
-  message: "Senior, Staff, and Lead roles in platform, SRE, and AI infrastructure.",
+  message: "Senior, Staff, Principal, and Lead roles in platform, SRE, and AI infrastructure.",
 };
