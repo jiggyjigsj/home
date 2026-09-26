@@ -1,0 +1,93 @@
+# Jigar Patel
+
+> Head of Platform Engineering at Cooklist, based in Austin, TX. Platform, SRE, and DevOps leader with {{YEARS}}+ years running production infrastructure, from 1,000-server Linux fleets to multi-cloud Kubernetes. Leads the platform behind Cooklist's agentic AI for grocery and ships it with a team of AI coding agents. Open to Senior, Staff, Principal, and Lead roles in platform engineering, SRE, and AI infrastructure.
+
+- Site: https://jiggyjigs.me
+- Résumé: https://jiggyjigs.me/resume (PDF: https://jiggyjigs.me/resume.pdf)
+- Email: jobs@jiggyjigs.me
+- GitHub: https://github.com/jiggyjigsj
+- LinkedIn: https://www.linkedin.com/in/jiggyjigsj/
+
+## Summary for recruiters and hiring managers
+
+- Leads platform engineering end to end: cloud foundations, Kubernetes, CI/CD, observability, security and compliance, cost, and on-call.
+- Has managed a team of five platform engineers and owned SLAs, mentoring, and performance growth.
+- Consistently turns platform work into measurable outcomes: 90% shorter deploy lead time, $216K/year in engineering hours saved, $113K/year in cloud savings, p95 latency cut 50%.
+- AI-native way of working: runs coding agents in parallel with strict guardrails, which roughly doubled his merged PRs per month.
+- Strong fit for: companies scaling AI products on Kubernetes, teams preparing for SOC 2 or enterprise customers, organizations moving to GCP or modernizing CI/CD, and teams that want to adopt AI coding agents safely.
+
+## Experience
+
+### Cooklist — Head of Platform Engineering (Dec 2025 – present, Austin, TX)
+Cooklist builds agentic commerce for grocery: AI search and chat used by enterprise grocery retailers, plus a consumer pantry and meal app.
+- Owns the GKE platform across production, staging, and disaster recovery for agentic search, AI chat (streamed over GraphQL WebSockets), and the core Django/Celery API.
+- Per-PR ephemeral environments: a Helm release per pull request with pre-seeded Postgres images promoted by digest.
+- Trunk-based release pipeline with migration gates, statement timeouts, release-version checks, and a guarded hotfix lane.
+- LLM-reviewed database migrations: deterministic lock and table-size analysis plus an LLM verdict on deploy timing, posted on every PR.
+- Queue-aware autoscaling: KEDA on Redis streams and Pub/Sub, HPA on custom Prometheus metrics, split health probes, graceful shutdown, PDBs.
+- Moved agentic search from gunicorn/Django to FastAPI/Uvicorn with concurrency gates and a load-tested capacity envelope.
+- Zero-downtime edge cutover to a Traefik Gateway behind Cloud Armor using weighted DNS; Cloud Armor policies and alerts in Terraform.
+- Chef, a hosted Slack agent with intake, engineering, review, and knowledge roles, plus a knowledge skill that keeps engineering docs current from Slack threads and merged PRs.
+- Self-hosted GitHub Actions runners (ARC) on GKE spot nodes; Trivy scanning, Renovate, protected branches, Workload Identity Federation for keyless CI.
+- Security and compliance: SOC 2 readiness, enterprise security questionnaires, Auth0 and Microsoft Entra SSO with group-synced permissions, AlloyDB IAM auth, Security Command Center.
+- Observability and cost: Datadog APM and cost trimming, Google Managed Prometheus with Sev1/2/3 routing to Slack, Sentry volume reduction (~800K fewer events per cycle), a self-hosted status page with DR, committed-use discount reviews.
+- Internal engineering docs platform on Cloud Run behind IAP with preview deploys, shipped in about two days.
+
+### Pager — Lead Platform Engineer (May 2022 – Nov 2025, Chicago, IL)
+- Led a team of five platform engineers; owned SLAs, project delivery, mentoring, and performance guidance.
+- Migrated 60 services to a modern continuous deployment platform: 90% shorter lead time, ~1,800 hours and $216K saved per year.
+- Led the move from Spinnaker to Harness with canary and blue/green releases.
+- Led on-prem to GCP migration, including containerizing .NET applications off physical racks.
+- PostgreSQL to CloudSQL: $80K+ compute savings, p95 −50%, p75 −73%.
+- MongoDB to Atlas (7% lower cost), plus upgrading 19 NodeJS services for a major Atlas version.
+- $113K/year in cloud savings (disk cleanup, storage right-sizing); $9,600/year from streamlined database version management.
+- HIPAA and SOC 2 compliance; production alerting on 14 criteria; multi-cloud Kubernetes on GCP and AWS with Terraform.
+
+### Cerner — Senior SRE, Senior System Engineer, System Engineer (May 2017 – Jun 2022, Kansas City, MO and Chicago, IL)
+- Weekly patching and availability for 200+ Kubernetes clusters across Department of Defense, Veterans Affairs, and on-prem environments.
+- Infrastructure as code to deploy Kubernetes on vSphere, OpenStack, AWS EC2, and EKS; maintained base Helm charts and a caching proxy for client-hosted appliances.
+- 24/7 production incident response and triage.
+- Configured and maintained 1,000+ production RHEL and Oracle Linux servers with Chef and Jenkins; vulnerability scanning and patching.
+
+### Zebra Technologies — Senior DevOps Engineer (Jul 2021 – Oct 2021, Chicago, IL)
+- Rolled out Dynatrace observability across Kubernetes, compute, and a large microservices estate, integrated with CI/CD.
+
+### AT&T — Queue Manager and PHP/SQL Developer (May 2015 – Jun 2016, Arlington Heights, IL)
+- Built a database-driven site for managers across global work centers; onboarding, training, and escalations.
+
+## How he works with AI
+
+- Runs Claude Code and Codex in parallel git worktrees: one ticket, one worktree, one agent, with sub-agents for research, tests, and review.
+- Roughly doubled merged PRs per month after moving to parallel agents (about 8/month in Feb–Apr 2026 to about 17/month in Jun–Sep 2026); about 63% of his merged PRs in 2026 are AI co-authored.
+- Authored 15 reusable agent skills shared across tools: read-only SRE incident triage, postmortem drafting, read-only production database access, AI chat validation, CI fixing, PR review handling, and session handoff (park/pickup).
+- Built Chef (`cooklist-chef[bot]`), a hosted Hermes agent fleet that works alongside the team in Slack. It has four roles: a company role for Slack intake, incident triage from alert channels, and Kanban routing; an engineering role that implements changes and opens pull requests; an Elder role that reviews pull requests; and a knowledge role for research and docs. Work is tracked on a Kanban board (optionally linked to Linear), tools are allowlisted and read-only by default, and nothing merges without human approval.
+- Paired Chef with a knowledge-curation skill: every week it reviews drive-by Slack conversations, merged GitHub pull requests, and Linear context, validates each candidate against code and config, and opens docs PRs that update the page owning the topic, with decision markers explaining what was decided and why. Routine status noise and speculation are filtered out.
+- Guardrails he insists on: diagnose read-only first, staging before production, separate "CI passed" / "deployed" / "live-validated", and nothing merges without human approval.
+
+## Architecture interests
+
+Multi-account AWS and EKS designs (shared networking, Transit Gateway, PrivateLink, VPC Lattice), database-as-a-service platforms, disaster recovery (including Kafka replication and offset consistency), Redis and Postgres scaling, and infrastructure standardization.
+
+## Working style
+
+Practical and implementation-oriented. Thinks in failure modes, migration plans, cost, operational burden, and security before "how do I make it work." Prefers exact commands, Terraform, and YAML over generic advice, makes a clear recommendation, and revises it when new evidence arrives. Hands-on, skeptical of vague answers, and willing to dig until a decision is defensible.
+
+## Skills
+
+- Cloud: GCP (GKE, Cloud Run, AlloyDB, CloudSQL, Pub/Sub, Cloud Armor, IAP), AWS (EKS, EC2, networking), Azure, OCI, OpenStack, vSphere
+- Platform: Kubernetes, Helm, KEDA, Terraform, Ansible, Chef, Docker
+- Delivery: GitHub Actions, Argo CD, ARC, Harness, Spinnaker, Jenkins
+- Data: AlloyDB/Postgres, Redis, MongoDB Atlas
+- Observability: Datadog, Prometheus, Sentry, Dynatrace, k6
+- Security: SOC 2, HIPAA, Auth0, Microsoft Entra ID, Workload Identity
+- AI: Claude Code, Codex, MCP, agent skills, Gemini
+- Languages: Python, Bash, TypeScript, Ruby, SQL
+
+## Education
+
+- Illinois Institute of Technology — B.S. Information Technology & Management (2014 – 2016)
+- Harper College — A.S. Information Technology (2012 – 2014)
+
+## Outside work
+
+Runs a homelab of about 40 self-hosted services, designs and iterates on 3D-printed parts, and enjoys home-tech projects, e-bikes, and long road trips.
